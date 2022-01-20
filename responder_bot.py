@@ -23,7 +23,7 @@ async def expose(context):
 
 async def version(context):
 
-    #general_channel=client.get_channel(933423173251239978)
+  
 
     myEmbed=discord.Embed(title="Current Version", value="This bot is in it's version 1.0", color=0x10931)
     myEmbed.add_field(name="Version Code:", value="v1.0.0",inline=False)
@@ -36,14 +36,14 @@ async def version(context):
 @client.event
 async def on_ready():
     #client will search for general channel and then print hello world.
-    general_channel=client.get_channel(933631212319305749)
+    general_channel=client.get_channel("your channels ID")
 
     await general_channel.send("I am here to expose bhati type, '--bhati' if you want to expose him! \n if you want to know the current version of the bot type, '--version'")
 
 @client.event
 async def on_message(message):
     if message.content=="expose":
-        general_channel=client.get_channel(933631212319305749)
+        general_channel=client.get_channel("your channels ID")
         
         myEmbed=discord.Embed(title="Who the fuck is bhati?",description="An asshole",color=0x10931)
         myEmbed.add_field(name="Also known as",value="Yashodhra",inline=False)
@@ -60,7 +60,7 @@ async def on_message(message):
 @client.event
 async def on_message(message):
     if message.content=="version":
-        general_channel=client.get_channel(933423173251239978)
+        general_channel=client.get_channel("your channels ID")
         
         myEmbed=discord.Embed(title="Current Version", value="This bot is in it's version 1.0", color=0x10931)
         myEmbed.add_field(name="Version Code:", value="v1.0.0",inline=False)
@@ -71,5 +71,6 @@ async def on_message(message):
         await general_channel.send(embed=myEmbed)
     
     await client.process_commands(message)
-
-client.run("OTMzNjE0NjY0Mjg4NDY0OTA3.YekGaQ.MIEUW0xgG71eRHGncMIoM_RGklo")
+    
+#Uncomment the line below and paste your bot's token
+#client.run("paste your bot's token here")
